@@ -19,10 +19,10 @@ class Animal {
 
 
 class Ayam extends Animal {
-  constructor(kaki, makanan) {
+  constructor(kaki, makanan, age) {
     super(kaki);
     this.makanan = makanan;
-    this.power = new Power(this.air);// composition
+    this.power = new Power(age);// composition
   }
 
   pelihara()
@@ -33,20 +33,22 @@ class Ayam extends Animal {
 }
 
 class Power {
-  constructor(air) {
-    this.air = air;
+  constructor(age) {
 
+    this.age = age;
   }
 
-  waterBender()
+  waterBender(power)
   {
-    console.log(`Ayam ini memiliki kekuatan yang bisa mengendalikan ${this.air}` );
+    console.log(`Ayam ini memiliki kekuatan yang bisa mengendalikan ${power} and age is ${this.age}` );
   }
 
 }
 
-var binatang = new Ayam(4, 'Beras');
-var superPower = new Power('air');
+
+//var power = new Power(age)
+
+var binatang = new Ayam(4, 'Beras', 9);
 binatang.warnaBulu('Hitam');
 binatang.pelihara();
-binatang.power.waterBender();
+binatang.power.waterBender('air');
